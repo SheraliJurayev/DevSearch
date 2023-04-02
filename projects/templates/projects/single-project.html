@@ -1,0 +1,11 @@
+{%extends 'main.html'%}
+
+{%block content%}
+
+<h1>{{project.title}}</h1>
+<br>
+<p>{{project.description}}</p>
+
+    <a href="{%url 'projects'%}">Previous</a>
+
+{%endblock content%}

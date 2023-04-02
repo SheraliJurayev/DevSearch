@@ -1,0 +1,21 @@
+{%extends 'main.html'%}
+
+{%block content%}
+
+    <h1>{{message}}</h1>
+
+    <ul>
+        {%for project in projects%}
+            <li>
+                 Title: <a href="{%url 'project' project.id%}">{{project.title}}</a>  ---- {{project.description}}
+            </li>
+        {%endfor%}
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Debitis, laborum placeat libero, atque nulla quibusdam sequi labore,
+        consequuntur voluptatum perspiciatis repellendus veniam in praesentium explicabo
+        fugiat inventore molestias harum illum.</p>
+
+
+{%endblock content%}
