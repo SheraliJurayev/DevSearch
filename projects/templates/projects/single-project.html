@@ -2,9 +2,16 @@
 
 {%block content%}
 
-<h1>{{project.title}}</h1>
+<h1>{{projectObj.title}}</h1>
+
+<hr>
+{%for tag in tags %}
+    <span style="border: 1px solid grey">{{tag}}</span>
+{%endfor%}
+<hr>
+
 <br>
-<p>{{project.description}}</p>
+<p>{{projectObj.description}}</p>
 
     <a href="{%url 'projects'%}">Previous</a>
 

@@ -2,14 +2,32 @@
 
 {%block content%}
 
-    <h1>{{message}}</h1>
+    <h1>Projects</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Project</th>
+            <th>Votes</th>
+            <th>Positive Votes </th>
+            <th>Created Time</th>
+            <th>More</th>
+            <th></th>
+        </tr>
+        {% for project in projects %}
+            <tr>
+                <td>{{project.id}}</td>
+                <td>{{project.title}}</td>
+                <td>{{project.vote_total}}</td>
+                <td>{{project.vote_ratio}}%</td>
+                <td>{{project.created}}</td>
+                <td><a href="{%url 'project' project.id%}">View</a></td>
+            </tr>
+        {%endfor%}
+    </table>
 
     <ul>
-        {%for project in projects%}
-            <li>
-                 Title: <a href="{%url 'project' project.id%}">{{project.title}}</a>  ---- {{project.description}}
-            </li>
-        {%endfor%}
+
     </ul>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
