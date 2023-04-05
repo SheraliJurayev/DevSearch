@@ -6,7 +6,6 @@
 
     <table>
         <tr>
-            <th>ID</th>
             <th>Project</th>
             <th>Votes</th>
             <th>Positive Votes </th>
@@ -16,7 +15,6 @@
         </tr>
         {% for project in projects %}
             <tr>
-                <td>{{project.id}}</td>
                 <td>{{project.title}}</td>
                 <td>{{project.vote_total}}</td>
                 <td>{{project.vote_ratio}}%</td>
@@ -29,6 +27,7 @@
     <ul>
 
     </ul>
+    <button style="color: green; background-color: green;"><a href="{%url 'create-project'%}" style="color: white ; font-style: normal; text-decoration: none;">ADD</a></button>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Debitis, laborum placeat libero, atque nulla quibusdam sequi labore,
