@@ -52,6 +52,6 @@ def updateProject(request , pk ):
 
 
 def deleteProject(request , pk):
-    project = Project.objects.get(pk=pk)
+    project = Project.objects.get(id=pk)
     context = {'objects':project}
     return render(request , 'projects/delete_template.html', context)
