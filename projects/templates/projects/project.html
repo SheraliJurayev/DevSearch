@@ -12,6 +12,7 @@
             <th>Created Time</th>
             <th>More</th>
             <th></th>
+            <th></th>
         </tr>
         {% for project in projects %}
             <tr>
@@ -20,6 +21,10 @@
                 <td>{{project.vote_ratio}}%</td>
                 <td>{{project.created}}</td>
                 <td><a href="{%url 'project' project.id%}">View</a></td>
+                <td><a href="{%url 'update-project' project.id%}">Edit</a></td>
+                <td><a href="">Delete</a></td>
+
+  
             </tr>
         {%endfor%}
     </table>
