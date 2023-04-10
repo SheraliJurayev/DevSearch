@@ -12,10 +12,10 @@ def projects(request):
     return render(request, 'projects/project.html' ,context)
 
 def project(request , pk):
-    projectObj = Project.objects.get(id=pk)
-    tags = projectObj.tags.all()
+    project = Project.objects.get(id=pk)
+    tags = project.tags.all()
     context =  {
-        'projectObj':projectObj , 
+        'project':project , 
         'tags':tags 
         }
     return render(request, 'projects/single-project.html' , context )
