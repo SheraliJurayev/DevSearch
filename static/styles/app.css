@@ -662,10 +662,15 @@ img {
   background-color: aqua;
 }
 
-.auth > .card {
+.auth > .card  {
   padding: 3rem 4rem;
   width: 95%;
   max-width: 65rem;
+}
+
+.auth > .card > .auth__header > a > h4 {
+  color: blue;
+  padding-top: 130px;
 }
 
 @media screen and (min-width: 650px) {
