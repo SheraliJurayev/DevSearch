@@ -1,36 +1,23 @@
-{%extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
 
-{% block content %}
+<body>
 
-
-{% if page == 'register' %}
-
-<h1> Register User </h1>
-<form method="post" action="{% url 'register' %}">
-    {%csrf_token%}
-    {{form.as_p}}
-
-    <input type="submit" value="Register User">
-</form>
-<p>Already have an account <a href="{% url 'login' %}">Login</a></p>
-
-{% else %}
-<div class="auth">
+  <div class="auth">
 
     <div class="card">
 
       <div class="auth__header text-center">
         <a href="/">
-          <h3 style="color: blue;">Sh_Jurayeff</h3>
+          <img src="images/icon.svg" alt="icon" />
         </a>
         <h3>Account Login</h3>
         <p>Hello Developer, Welcome Back!</p>
       </div>
 
-      <form action="{% url 'login' %}" method="post" class="form auth__form">
-        {%csrf_token%}
-        <!-- Input:Username -->
+      <form action="#" class="form auth__form">
+        <!-- Input:Email -->
         <div class="form__field">
           <label for="formInput#text">Username: </label>
           <input class="input input--text" id="formInput#text" type="text" name="username"
@@ -51,11 +38,11 @@
 
       <div class="auth__alternative">
         <p>Don’t have an Account?</p>
-        <a href="{% url 'register' %}">Sign Up</a>
+        <a href="signup.html">Sign Up</a>
       </div>
     </div>
   </div>
-{% endif %}
 
+</body>
 
-{% endblock content %}
+</html>
