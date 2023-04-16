@@ -86,8 +86,12 @@ def userProfile(request , pk):
 def userAccount(request):
     profile = request.user.profile
 
+    skills = profile.skill_set.all()
+
     context = {
-        'profile': profile
+        'profile': profile ,
+        'skills': skills 
+        
     }
     return render(request , 'users/account.html' , context)
     
