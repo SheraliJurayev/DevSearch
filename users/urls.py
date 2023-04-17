@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import profiles , userProfile , loginUser , logoutUser ,registerUser,userAccount,editAccount
+from .views import profiles , userProfile , loginUser , logoutUser ,registerUser,userAccount,editAccount,createSkill
 
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('profile/<str:pk>/' , userProfile , name = 'user-profile') , 
     path('account/' , userAccount , name = 'account') , 
     path('edit-account/' , editAccount , name = 'edit-account') , 
+    path('create-skill/' , createSkill , name = 'create-skill') , 
 ]
