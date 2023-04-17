@@ -3,7 +3,7 @@ from .models import Profile
 from django.contrib.auth import login , authenticate , logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm , ProfileForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -53,7 +53,7 @@ def registerUser(request):
             messages.success( request , ' User was successfully registered' )
 
             login(request , user)
-            return redirect('profiles')
+            return redirect('edit-account')
         else:
             messages.success(request , 'An error has occured during registration') 
     context = {
@@ -99,8 +99,18 @@ def userAccount(request):
 
 @login_required(login_url = 'login')
 def editAccount(request):
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+     
+    if request.method == 'POST':
+        form = ProfileForm(request.POST , request.FILES , instance=profile )
+        if form.is_valid():
+            
+            form.save()
+            messages.success(request,"Your Account updated.")
+            return redirect('account')
 
     context = {
-            
+        'form': form
     }
     return render(request , 'users/profile_form.html' , context)
