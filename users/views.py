@@ -96,4 +96,11 @@ def userAccount(request):
         
     }
     return render(request , 'users/account.html' , context)
-    
+
+@login_required(login_url = 'login')
+def editAccount(request):
+
+    context = {
+            
+    }
+    return render(request , 'users/profile_form.html' , context)

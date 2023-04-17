@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Edit Account </h1>
+
+<form action="{% url 'edit-profile' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="submit">
+
+
+</form>
+
+
+{% endblock content %}
