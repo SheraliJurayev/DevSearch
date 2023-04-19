@@ -3,7 +3,7 @@ from .views import profiles , userProfile , \
       loginUser , logoutUser ,\
         registerUser, userAccount,\
             editAccount, createSkill,\
-                updateSkill
+                updateSkill , deleteSkill
 
 
 urlpatterns = [
@@ -16,4 +16,5 @@ urlpatterns = [
     path('edit-account/' , editAccount , name = 'edit-account') , 
     path('create-skill/' , createSkill , name = 'create-skill') , 
     path('update-skill/<str:pk>/' , updateSkill , name = 'update-skill') , 
+    path('delete-skill/<str:pk>/' , deleteSkill , name = 'delete-skill') ,
 ]

@@ -156,11 +156,9 @@ def updateSkill(request , pk ):
     return render(request , 'users/skill_form.html' , context)
 
 @login_required(login_url='login')
-def deleteProject(request , pk):
-    skill = request.user.profile
-    project = skill.project_set.get(id=pk)
-    if request.method == 'POST':
-        skill.delete()
-        return redirect('account')
-    context = {'object':project}
-    return render(request , 'projects/delete_template.html', context)
+def deleteSkill(request , pk):
+    profile = request.user.profile
+    skill = profile.skill_set.get(id=pk)
+    context = {'object':skill}
+    return render(request , 'delete_template.html', context)
+
