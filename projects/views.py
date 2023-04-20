@@ -4,24 +4,14 @@ from .models import Project , Tag
 from .forms import ProjectForm 
 from django.db.models import Q
 from users.models import Skill 
+from .utils import searchProjects
 
 def projects(request):
-
-    search_query = ''
-    if request.GET.get('search_query'):
-        search_query = request.GET.get('search_query')
-
-    tags = Tag.objects.filter(name__icontains=search_query)
-
-    projects = Project.objects.distinct().filter(
-        Q(title__icontains=search_query) |
-        Q(description__icontains=search_query) |
-        Q(owner__name__icontains=search_query) |
-        Q(tags__in=tags)        
-    )
+    projects , search_query = searchProjects(request)
+   
     context = {
         'projects': projects,
-        'search_query': search_query
+        'search_query':search_query
     }
     
     return render(request, 'projects/project.html' ,context)
