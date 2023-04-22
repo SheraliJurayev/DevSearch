@@ -11,7 +11,7 @@ def projects(request):
    
     context = {
         'projects': projects,
-        'search_query':search_query
+        'search_query':search_query  
     }
     
     return render(request, 'projects/project.html' ,context)
