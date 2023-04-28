@@ -11,7 +11,7 @@ def projects(request):
     projects , search_query = searchProjects(request)
    
     page = request.GET.get('page')
-    results = 3
+    results = 15
     paginator = Paginator(projects , results )
 
     try:
